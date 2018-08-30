@@ -4,7 +4,7 @@
   "description": "Proyecto Markdown",
   "main": "test.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/TammySerket/scl-2018-01-FE-markdown/issues"
   },
-  "homepage": "https://github.com/TammySerket/scl-2018-01-FE-markdown#readme"
+  "homepage": "https://github.com/TammySerket/scl-2018-01-FE-markdown#readme",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  }
 }
