@@ -20,4 +20,4 @@ function linkFiles(mdFile){
 
   
 
-module.export = linkFiles;
+module.exports = linkFiles;

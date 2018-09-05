@@ -1,9 +1,10 @@
 const linkValidate = require('./links.js');
 
+describe("lee un directorio", () => {
 it('Debería leer si el archivo es formato MD', () =>{
   const fakeMdFetch = jest.fn().mockReturnValue(Promise.resolve({
     json: () => Promise.resolve({
-     links: "fakelink.com"
+     links: "fakelink.md"
     })
   }))
   return linkValidate(fakeMdFetch)
@@ -11,3 +12,4 @@ it('Debería leer si el archivo es formato MD', () =>{
      expect(result).toBe(fakeMdFetch)
    })
   })
+})
