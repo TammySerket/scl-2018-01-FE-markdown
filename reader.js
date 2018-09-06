@@ -1,19 +1,35 @@
 const fs = require('fs');
 const path = require('path');
-const fetch = require("node-fetch")
+const fetch = require("./fetch.js")
 
 //console.log('hola')
 function readDirectory() {
 return new Promise((resolve, reject) => {  
-fs.readdir(fetch, 'utf-8', (err, files) => {
+fs.readFile(fetch, 'utf-8', (err, document) => {
+  if (require.main === module) {
+    //Soy un programa en la terminal
+ }else{
+    //Me están ejecutando como módulo, debería exportar la función solamente
+ }
   if (err) {
   return reject(err);
 }
-//return resolve(files);
-console.log(resolve(files));
+return resolve(document);
+//console.log(resolve(files));
 })
 })}
 console.log('Epera mientras se procesan los datos... =D')
+
+function readFiles(directory){
+return new Promise((resolve, reject) => {
+  fs.readlink(directory, (error, files) => {
+    if (err) {
+      return reject(err);
+    }
+    return resolve(files);
+  })
+})
+}
 
 readDirectory(process.cwd())
    .then((readLinks) => {
