@@ -6,11 +6,11 @@ const fetch = require("./fetch.js")
 function readDirectory() {
 return new Promise((resolve, reject) => {  
 fs.readFile(fetch, 'utf-8', (err, document) => {
-  if (require.main === module) {
-    //Soy un programa en la terminal
+ /* if (require.main === module) {
+    console.log("Soy un programa en la terminal");
  }else{
-    //Me están ejecutando como módulo, debería exportar la función solamente
- }
+    console.log("Me están ejecutando como módulo, debería exportar la función solamente");
+ }*/
   if (err) {
   return reject(err);
 }
@@ -31,7 +31,7 @@ return new Promise((resolve, reject) => {
 })
 }
 
-readDirectory(process.cwd())
+/*readDirectory(process.cwd())
    .then((readLinks) => {
      const linkPromises = readLinks.map((file) => {
        return readFiles(file);
@@ -41,4 +41,4 @@ readDirectory(process.cwd())
      console.log(infoFiles);
    }).catch((error) => {
      console.log(error);
-   })
+   })*/
